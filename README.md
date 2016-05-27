@@ -1,4 +1,4 @@
-# Ansible Role - Docker
+# Ansible Role - Docker for Linux Server
 
 [![Build Status](https://travis-ci.org/elnebuloso/ansible-role-docker.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-docker)
 
