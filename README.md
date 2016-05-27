@@ -15,7 +15,7 @@ No special requirements; note that this role requires root access, so either run
 
     - hosts: localhost
       roles:
-        - { role: elnebuloso.server-base }
+        - { role: elnebuloso.docker }
 
 ##  License
 
