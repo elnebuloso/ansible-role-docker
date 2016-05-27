@@ -11,7 +11,7 @@
 - name: add apt repository
   apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-trusty main' state=present
 
-- name: install docker-engine
+- name: install docker
   apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
   with_items:
     - docker-engine
