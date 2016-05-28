@@ -15,5 +15,6 @@ galaxy_info:
     - server
     - development
     - webserver
+    - docker
 
 dependencies: []
