@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/elnebuloso/ansible-role-docker.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-docker)
 
-Docker for Ubuntu Linux Server.
+Docker for Linux Server.
 
 ## Requirements
 
-None.
+This role requires Ansible 2.0 or higher, and platform requirements are listed in the metadata file.
 
 ## Example Playbook
 
@@ -15,6 +15,10 @@ None.
   roles:
     - { role: elnebuloso.docker }
 ```
+
+## Dependencies
+
+None.
 
 ##  License
 

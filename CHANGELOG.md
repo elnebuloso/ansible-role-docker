@@ -1,5 +1,9 @@
 # changelog
 
+## 1.2.1
+
+- updated documentation
+
 ## 1.2.0
 
 - python-pip
