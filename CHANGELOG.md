@@ -1,5 +1,9 @@
 # changelog
 
+## 2.1.0
+
+- pip install docker compose
+
 ## 2.0.0
 
 - supporting ubuntu 16.04 xenial
