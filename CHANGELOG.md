@@ -1,5 +1,9 @@
 # changelog
 
+## 2.2.0
+
+- upgrade to latest pip
+
 ## 2.1.0
 
 - pip install docker compose
