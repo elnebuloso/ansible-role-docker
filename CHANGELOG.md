@@ -1,5 +1,9 @@
 # changelog
 
+## 2.3.0
+
+- removed pip for docker tools, use role elnebuloso.pip
+
 ## 2.2.0
 
 - upgrade to latest pip
