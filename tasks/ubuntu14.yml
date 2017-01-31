@@ -1,12 +1,21 @@
 ---
-- name: install apt-transport-https
-  apt: pkg=apt-transport-https state=present update_cache=yes cache_valid_time=3600
+- name: check uname for installing linux image extra
+  shell: echo $(uname -r)
+  register: docker_install_linux_image_extra_uname
+  when: docker_install_linux_image_extra == "yes"
 
-- name: install ca-certificates
-  apt: pkg=ca-certificates state=present update_cache=yes cache_valid_time=3600
+- name: install linux image extra
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    - "linux-image-extra-{{docker_install_linux_image_extra_uname.stdout}}"
+    - "linux-image-extra-virtual"
+  when: docker_install_linux_image_extra == "yes"
 
-- name: install python-pip
-  apt: pkg=python-pip state=present update_cache=yes cache_valid_time=3600
+- name: install packages
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    - apt-transport-https
+    - ca-certificates
 
 - name: add the gpg key
   apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80 id=58118E89F3A912897C070ADBF76221572C52609D

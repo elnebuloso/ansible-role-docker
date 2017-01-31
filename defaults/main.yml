@@ -1,0 +1,5 @@
+---
+# values can be: yes, no
+# - linux-image-extra-$(uname -r)
+# - linux-image-extra-virtual
+docker_install_linux_image_extra: "yes"

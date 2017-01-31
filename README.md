@@ -8,6 +8,17 @@ Docker for Linux Server.
 
 This role requires Ansible 2.0 or higher, and platform requirements are listed in the metadata file.
 
+## Role Variables
+
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+```
+# values can be: yes, no
+# - linux-image-extra-$(uname -r)
+# - linux-image-extra-virtual
+docker_install_linux_image_extra: "yes"
+```
+
 ## Example Playbook
 
 ```

@@ -1,5 +1,9 @@
 # changelog
 
+## 2.4.0
+
+- new config docker_install_linux_image_extra
+
 ## 2.3.0
 
 - removed pip for docker tools, use role elnebuloso.pip
