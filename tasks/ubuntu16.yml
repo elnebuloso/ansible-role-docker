@@ -27,3 +27,17 @@
   apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
   with_items:
     - docker-engine
+
+- name: check kernel (system) for correct docker-compose installation
+  shell: echo $(uname -s)
+  register: docker_compose_uname_kernel_system
+
+- name: check kernel (system) for correct docker-compose installation
+  shell: echo $(uname -m)
+  register: docker_compose_uname_kernel_machine
+
+- name: download docker-compose release
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-{{docker_compose_uname_kernel_system.stdout}}-{{docker_compose_uname_kernel_machine.stdout}}"
+    dest: /usr/local/bin/docker-compose
+    mode: 0755

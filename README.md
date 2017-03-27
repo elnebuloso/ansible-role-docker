@@ -17,6 +17,7 @@ Available variables are listed below, along with default values (see `defaults/m
 # - linux-image-extra-$(uname -r)
 # - linux-image-extra-virtual
 docker_install_linux_image_extra: "yes"
+docker_compose_version: "latest"
 ```
 
 ## Example Playbook

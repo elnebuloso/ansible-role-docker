@@ -1,5 +1,9 @@
 # changelog
 
+## 2.5.0
+
+- install docker-compose
+
 ## 2.4.0
 
 - new config docker_install_linux_image_extra
