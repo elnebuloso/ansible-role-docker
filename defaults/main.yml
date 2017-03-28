@@ -1,5 +1,5 @@
 ---
-docker_compose_version: "latest"
+docker_compose_version: "1.11.2"
 
 # values can be: yes, no
 docker_install_docker_py: "no"

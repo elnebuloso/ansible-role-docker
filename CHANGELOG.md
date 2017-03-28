@@ -1,5 +1,9 @@
 # changelog
 
+## 2.7.0
+
+- bugfix latest docker-compose to version number
+
 ## 2.6.0
 
 - removed installation docker_install_linux_image_extra

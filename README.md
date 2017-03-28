@@ -13,7 +13,7 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```
-docker_compose_version: "latest"
+docker_compose_version: "1.11.2"
 
 # values can be: yes, no
 docker_install_docker_py: "no"
