@@ -2,4 +2,4 @@
 docker_compose_version: "latest"
 
 # values can be: yes, no
-docker_install_docker_py: "yes"
+docker_install_docker_py: "no"
