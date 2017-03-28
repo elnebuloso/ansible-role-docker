@@ -1,5 +1,10 @@
 # changelog
 
+## 2.6.0
+
+- removed installation docker_install_linux_image_extra
+- added config setting for docker-py installation
+
 ## 2.5.0
 
 - install docker-compose

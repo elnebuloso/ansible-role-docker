@@ -13,11 +13,10 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```
-# values can be: yes, no
-# - linux-image-extra-$(uname -r)
-# - linux-image-extra-virtual
-docker_install_linux_image_extra: "yes"
 docker_compose_version: "latest"
+
+# values can be: yes, no
+docker_install_docker_py: "yes"
 ```
 
 ## Example Playbook

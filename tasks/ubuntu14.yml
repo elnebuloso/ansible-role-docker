@@ -1,16 +1,4 @@
 ---
-- name: check uname for installing linux image extra
-  shell: echo $(uname -r)
-  register: docker_install_linux_image_extra_uname
-  when: docker_install_linux_image_extra == "yes"
-
-- name: install linux image extra
-  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
-  with_items:
-    - "linux-image-extra-{{docker_install_linux_image_extra_uname.stdout}}"
-    - "linux-image-extra-virtual"
-  when: docker_install_linux_image_extra == "yes"
-
 - name: install packages
   apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
   with_items:
@@ -41,3 +29,14 @@
     url: "https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-{{docker_compose_uname_kernel_system.stdout}}-{{docker_compose_uname_kernel_machine.stdout}}"
     dest: /usr/local/bin/docker-compose
     mode: 0755
+
+- name: install docker-py essentials
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+  when: docker_install_docker_py == "yes"
+  with_items:
+    - python-pip
+
+- name: install docker-py pip
+  when: docker_install_docker_py == "yes"
+  pip:
+    name: docker-py
