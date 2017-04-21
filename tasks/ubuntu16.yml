@@ -30,13 +30,13 @@
     dest: /usr/local/bin/docker-compose
     mode: 0755
 
-- name: install docker-py essentials
+- name: install python docker essentials
   apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
-  when: docker_install_docker_py == "yes"
+  when: docker_install_docker_python == "yes"
   with_items:
     - python-pip
 
-- name: install docker-py pip
-  when: docker_install_docker_py == "yes"
+- name: install pip docerk
+  when: docker_install_docker_python == "yes"
   pip:
-    name: docker-py
+    name: docker

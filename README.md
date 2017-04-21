@@ -16,7 +16,7 @@ Available variables are listed below, along with default values (see `defaults/m
 docker_compose_version: "1.11.2"
 
 # values can be: yes, no
-docker_install_docker_py: "no"
+docker_install_docker_python: "no"
 ```
 
 ## Example Playbook
