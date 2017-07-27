@@ -8,23 +8,25 @@ Docker for Linux Server.
 
 This role requires Ansible 2.0 or higher, and platform requirements are listed in the metadata file.
 
+## Supported Distributions
+
+- ubuntu14
+- ubuntu16
+
 ## Role Variables
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
-
-```
-docker_compose_version: "1.11.2"
-
-# values can be: yes, no
-docker_install_docker_python: "no"
-```
+- [`defaults/main.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/defaults/main.yml)
+- [`vars/main.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/vars/main.yml)
+- [`vars/ubuntu14.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/vars/ubuntu14.yml)
+- [`vars/ubuntu16.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/vars/ubuntu16.yml)
+- Variables prefixed with __ (2 Underscores) are Defaults, overwrite them by writing without the Underscores
 
 ## Example Playbook
 
 ```
 - hosts: localhost
   roles:
-    - { role: elnebuloso.docker }
+    - role: elnebuloso.docker
 ```
 
 ## Dependencies

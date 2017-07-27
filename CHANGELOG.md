@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [2.10.0] - 2017-07-27
+### Changed
+- renamed server_base_os to docker_os
+- optimized docker install, using os variables
+
+
 ## [2.9.0] - 2017-04-22
 ### Changed
 - check server_base_os is defined
