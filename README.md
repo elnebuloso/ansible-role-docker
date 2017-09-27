@@ -10,16 +10,11 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 
 ## Supported Distributions
 
-- ubuntu14
 - ubuntu16
 
 ## Role Variables
 
 - [`defaults/main.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/defaults/main.yml)
-- [`vars/main.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/vars/main.yml)
-- [`vars/ubuntu14.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/vars/ubuntu14.yml)
-- [`vars/ubuntu16.yml`](https://github.com/elnebuloso/ansible-role-docker/blob/master/vars/ubuntu16.yml)
-- Variables prefixed with __ (2 Underscores) are Defaults, overwrite them by writing without the Underscores
 
 ## Example Playbook
 
@@ -27,6 +22,10 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 - hosts: localhost
   roles:
     - role: elnebuloso.docker
+      docker_version: "1.12"
+      docker_compose_install: "yes"
+      docker_compose_version: "1.16.1"
+      docker_install_docker_python: "yes"
 ```
 
 ## Dependencies

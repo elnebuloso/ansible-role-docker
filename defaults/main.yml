@@ -1,5 +1,11 @@
 ---
-docker_compose_version: "1.12.0"
+# 1.12, 1.13, 17.03, 17.06
+docker_version: "1.12"
+
+# https://github.com/docker/compose/releases
+# values can be: yes, no
+docker_compose_install: "no"
+docker_compose_version: "1.16.1"
 
 # values can be: yes, no
-docker_install_docker_python: "yes"
+docker_install_docker_python: "no"

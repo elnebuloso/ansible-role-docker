@@ -10,17 +10,16 @@ while [ $# -gt 0 ]; do
             docker-compose up --build --force-recreate -d
         ;;
         test)
-            docker-compose exec ubuntu14 ansible-playbook -i 'localhost,' -c local /etc/ansible/roles/$role/tests/test.yml --syntax-check
             docker-compose exec ubuntu16 ansible-playbook -i 'localhost,' -c local /etc/ansible/roles/$role/tests/test.yml --syntax-check
         ;;
-        ubuntu14)
-            docker-compose exec ubuntu14 ansible-playbook -i 'localhost,' -c local /etc/ansible/roles/$role/tests/test.yml
-        ;;
-        ubuntu16)
+        install)
             docker-compose exec ubuntu16 ansible-playbook -i 'localhost,' -c local /etc/ansible/roles/$role/tests/test.yml
         ;;
+        ubuntu16)
+            docker-compose exec ubuntu16 docker --version
+        ;;
         stop)
-            docker-compose stop
+            docker-compose down --remove-orphans
         ;;
     esac
     shift
