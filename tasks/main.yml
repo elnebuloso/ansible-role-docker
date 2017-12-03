@@ -1,65 +1,19 @@
 ---
-# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
+# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#uninstall-old-versions
 
-- name: install packages
-  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
+- name: "remove deprecated engines"
+  apt:
+    name: "{{item}}"
+    state: absent
+    purge: yes
   with_items:
-    - software-properties-common
-    - apt-transport-https
-    - ca-certificates
-    - curl
+    - docker
+    - docker.io
+    - docker-engine
+  when: docker_uninstall_deprecated_engines == "yes"
 
-- stat: path=/usr/bin/docker
-  register: docker_check_bin
-  changed_when: false
+# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-from-a-package
 
-- set_fact: docker_installed_version=""
-  changed_when: false
-
-- name: "check if docker {{docker_version}} is installed"
-  command: docker --version
-  register: docker_check_installed
-  when: docker_check_bin.stat.exists == true
-  changed_when: false
-
-- set_fact: docker_installed_version="{{docker_check_installed.stdout}}"
-  when: docker_check_installed.stdout is defined
-  changed_when: false
-
-- name: "install docker {{docker_version}}"
-  script: install-docker-{{docker_version}}.sh
-  when: 'docker_version not in docker_installed_version'
-
-################################################################################################
-
-- name: check kernel (system) for correct docker-compose installation
-  when: docker_compose_install == "yes"
-  shell: echo $(uname -s)
-  register: docker_compose_uname_kernel_system
-  changed_when: False
-
-- name: check kernel (system) for correct docker-compose installation
-  when: docker_compose_install == "yes"
-  shell: echo $(uname -m)
-  register: docker_compose_uname_kernel_machine
-  changed_when: False
-
-- name: download docker-compose release
-  when: docker_compose_install == "yes"
-  get_url:
-    url: "https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-{{docker_compose_uname_kernel_system.stdout}}-{{docker_compose_uname_kernel_machine.stdout}}"
-    dest: /usr/local/bin/docker-compose
-    mode: 0755
-
-################################################################################################
-
-- name: install python docker essentials
-  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=3600
-  when: docker_install_docker_python == "yes"
-  with_items:
-    - python-pip
-
-- name: install pip docker
-  when: docker_install_docker_python == "yes"
-  pip:
-    name: docker
+- name: "install docker release"
+  apt:
+    deb: "{{docker_release}}"

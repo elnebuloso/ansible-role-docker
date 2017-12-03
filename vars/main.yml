@@ -1,2 +1,0 @@
----
-docker_os: "{{ansible_distribution|lower}}{{ansible_distribution_major_version|int}}"

@@ -1,7 +1,0 @@
-version: "2"
-
-services:
-  ubuntu16:
-    image: elnebuloso/ansible:ubuntu16-latest
-    volumes:
-      - .:/etc/ansible/roles/ansible-role-docker
