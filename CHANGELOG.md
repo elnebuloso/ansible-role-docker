@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [4.1.0] - 2018-02-24
+### Changed
+- download package if not downloaded before
+
+
 ## [4.0.0] - 2017-12-03
 ### Changed
 - Install Docker Package

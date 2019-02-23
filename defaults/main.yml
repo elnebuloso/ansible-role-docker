@@ -1,8 +1,0 @@
----
-# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#uninstall-old-versions
-docker_uninstall_deprecated_engines: "yes"
-
-# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-from-a-package
-# https://apt.dockerproject.org/repo/pool/main/d/docker-engine
-# https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64
-docker_release: "https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_17.03.2~ce-0~ubuntu-xenial_amd64.deb"

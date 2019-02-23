@@ -4,6 +4,12 @@
 
 Docker for Linux Server.
 
+## Installation of docker Releases
+
+- https://download.docker.com/linux/ubuntu/dists/trusty/pool/stable/amd64/
+- https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/
+- https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/
+
 ## Requirements
 
 This role requires Ansible 2.0 or higher, and platform requirements are listed in the metadata file.
@@ -22,6 +28,7 @@ This role requires Ansible 2.0 or higher, and platform requirements are listed i
 - hosts: localhost
   roles:
     - role: elnebuloso.docker
+      docker_release: https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/docker-ce_18.06.3~ce~3-0~ubuntu_amd64.deb
 ```
 
 ## Dependencies

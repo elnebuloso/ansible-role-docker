@@ -1,19 +1,11 @@
 ---
-# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#uninstall-old-versions
+- name: "download docker release {{docker_release}}"
+  get_url:
+    url: "{{docker_release}}"
+    dest: "/opt/docker-release-{{docker_release | hash('md5')}}"
+  when: docker_release is defined and docker_release != ""
 
-- name: "remove deprecated engines"
+- name: "install docker release {{docker_release}}"
   apt:
-    name: "{{item}}"
-    state: absent
-    purge: yes
-  with_items:
-    - docker
-    - docker.io
-    - docker-engine
-  when: docker_uninstall_deprecated_engines == "yes"
-
-# https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-from-a-package
-
-- name: "install docker release"
-  apt:
-    deb: "{{docker_release}}"
+    deb: "/opt/docker-release-{{docker_release | hash('md5')}}"
+  when: docker_release is defined and docker_release != ""
