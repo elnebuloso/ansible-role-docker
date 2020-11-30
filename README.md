@@ -1,6 +1,6 @@
 # Ansible Role - Docker for Linux Server
 
-[![Build Status](https://travis-ci.org/elnebuloso/ansible-role-docker.svg?branch=master)](https://travis-ci.org/elnebuloso/ansible-role-docker)
+![abandoned](https://img.shields.io/badge/project-abandoned-red)
 
 Docker for Linux Server.
 
